@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .display {
+      background: black;
+      color: limegreen;
+      font-size: 2rem;
+      text-align: right;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      min-height: 60px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50%;
+      background: #333;
+      color: white;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    button:active {
+      background: #888;
+      transform: scale(0.95);
+    }
+
+    .operator {
+      background: #f39c12;
+    }
+
+    .operator:hover {
+      background: #e67e22;
+    }
+
+    .equal {
+      background: #27ae60;
+      grid-column: span 2;
+      border-radius: 25px;
+    }
+
+    .equal:hover {
+      background: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+    <div class="buttons">
+      <button >7</button>
+      <button >8</button>
+      <button >9</button>
+      <button class="operator" ">÷</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="operator" >×</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="operator" >−</button>
+
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button class="equal" >=</button>
+      <button class="operator" >+</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
